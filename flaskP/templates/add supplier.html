@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Add Supplier</title>
+</head>
+<body>
+    <header class="text-Purple-600 body-font font-large ">
+        <div class="container mx-auto flex flex-wrap p-4 flex-col md:flex-row items-center bg-white shadow-2xl ">
+          
+          <a href="{{ url_for('home') }}"class="flex title-font font-large items-center text-purple-900 mb-4 md:mb-0">
+            <span  >
+              <img alt="error" class="md:ml-10 flex flex-wrap h-12" src="{{ url_for('static', filename='finallogo.jpeg') }}">
+            </span>
+    
+              <span class="text-3xl text-gray-500 font-medium ml-5">Store</span>
+              <span class="text-3xl text-yellow-500 font-medium ml-2">Shed</span>
+            
+            
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center sm\:hover\:shadow-2xl">
+    
+            <a href="{{ url_for('home') }}"class="mr-10 hover:text-yellow-800">Home</a>
+            <a href="{{ url_for('dashboard') }}"class="mr-10 hover:text-yellow-800">Dashboard</a>
+            <a href="{{ url_for('signin') }}"
+                      button class="ml-4 inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-500 rounded text-lg">Logout</button>
+            </a>
+    
+          </nav>
+          
+        </div>
+      </header>
+      <div class="container p-2 mx-auto flex flex-wrap items-center justify-center border-purple-900 bg-yellow-300">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+         {% if messages%} 
+         {% for category, message in messages %}
+          <div class="alert alert-warning alert-dismissible fade show text-green-800" role="alert">
+            <strong>{{message}} </strong> 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+  
+          {% endfor %} {% endif %} {% endwith %} {% if error %}
+          <div class="alert alert-danger">{{error}}</div>
+          {% endif %} 
+          {% if msg %}
+          <div class="alert alert-success">{{msg}}</div>
+          {% endif %}
+        
+
+      </div>
+      
+      <section class="text-purple-600 body-font">
+        <div class="container px-5 py-24 mx-auto flex flex-wrap items-center justify-center border-purple-900 bg-yellow-300">
+          <div class="lg:w-1/2 md:w-1/2 bg-white rounded-lg p-8  justify-top shadow-2xl ">
+            <h2 class="text-yellow-900 text-lg font-extrabold title-font ml-60  ">Add Supplier</h2>
+            <div class="mt-8">
+              <div class="mt-6">
+                <form action="#" method="POST" class="space-y-6">
+                  <div>
+                    <label for="suppliername" class="leading-7 text-sm text-gray-700">Supplier Name </label>
+                    <div class="mt-1">
+                      <input id="text" name="suppliername" type="suppliername" required="" placeholder="Enter supplier name" class="w-full bg-white rounded border border-gray-500 focus:border-gray-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out
+                  ">
+                    </div>
+                  </div>
+                  <div class="space-y-1">
+                    <label for="phono" class="leading-7 text-sm text-gray-700"> Phone Number</label>
+                    <div class="mt-1">
+                      <input id="tel" name="phono" type="phono"  required="" placeholder="Enter Phone no." class="w-full bg-white rounded border border-gray-500 focus:border-gray-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out                 
+                  ">
+                    </div>
+                  </div>
+                  <div class="space-y-1">
+                    <label for="email" class="leading-7 text-sm text-gray-700"> Email-id</label>
+                    <div class="mt-1">
+                      <input id="email" name="email" type="email"  placeholder="Enter email id " class="w-full bg-white rounded border border-gray-500 focus:border-gray-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+
+                   
+                    </div>
+                  </div>
+                  <div class="space-y-1">
+                    <label for="address" class="leading-7 text-sm text-gray-700">Address</label>
+                    <div class="mt-1">
+                      <input id="text" name="address" type="address"  required="" placeholder="Enter address" class="w-full bg-white rounded border border-gray-500 focus:border-gray-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out
+
+                    
+                  ">
+                    </div>
+                  </div>
+                  <a href="{{url_for('dashboard')}}"
+                    button class="inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-500 rounded text-lg ml-60">Back </button>
+                    </a>
+                    
+                    <button class="ml-4 inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-500 rounded text-lg ">Add Supplier</button>  
+                  
+                  
+                  
+                  
+                    
+                  </div>
+                </form>
+                
+                    </div>
+                  </button>
+                </div>
+              </div>
+            
+      </section>
+    
+      
+      
+    
+</body>
+</html>

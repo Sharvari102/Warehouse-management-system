@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    
+    
+    <title>Product Report</title>
+</head>
+<body>
+  <header class="text-Purple-600 body-font font-large ">
+    <div class="container mx-auto flex flex-wrap p-4 flex-col md:flex-row items-center bg-white shadow-2xl ">
+      
+      <a href="{{ url_for('home') }}"class="flex title-font font-large items-center text-purple-900 mb-4 md:mb-0">
+        <span  >
+          <img alt="error" class="md:ml-10 flex flex-wrap h-12" src="{{ url_for('static', filename='finallogo.jpeg') }}">
+        </span>
+
+          <span class="text-3xl text-gray-500 font-medium ml-5">Store</span>
+          <span class="text-3xl text-yellow-500 font-medium ml-2">Shed</span>
+        
+        
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base  sm\:hover\:shadow-2xl">
+
+        <a href="{{ url_for('home') }}"class="mr-10 hover:text-yellow-800">Home</a>
+        <a href="{{ url_for('dashboard') }}"class="mr-10 hover:text-yellow-800">Dashboard</a>
+        <a href="{{ url_for('signin') }}"
+                  button class="ml-4 inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-500 rounded text-lg">Logout</button>
+        </a>
+
+      </nav>
+      
+    </div>
+  </header>
+<section class="text-gray-600 body-font text-xl bg-gradient-to-t from-yellow-50 to-white ">
+    <div class="container px-5 py-24 mx-auto pb-50  ">
+      <div class="flex flex-col text-center w-full mb-20">
+        <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">Product Report</h1>
+      </div>
+      <div class="lg:w-2/3 w-full mx-auto overflow-auto">
+      
+        <table class="table-auto table-table-stripped shadow-2xl">
+          <thead>
+            <tr>
+              <th class="border px-2  border-gray-200 bg-yellow-400 shadow-2xl">Sr No.</th>
+              <th class="border px-6 py-4 border-gray-200 bg-yellow-400 shadow-2xl">Product Name </th>
+              <th class="border px-6 py-4 border-gray-200 bg-yellow-400 shadow-2xl">Product ID</th>
+              <th class="border px-6 py-4 border-gray-200 bg-yellow-400 shadow-2xl">Company </th>
+              <th class="border px-6 py-4 border-gray-200 bg-yellow-400 shadow-2xl">Stock</th>
+              <th class="border px-6 py-4 border-gray-200 bg-yellow-400 shadow-2xl">Location</th>
+              <th class="border px-24 py-4 border-gray-200 bg-yellow-400 shadow-2xl">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for product in  report %}
+              
+          
+            <tr>
+              <td class="border px-6 py-4 border-gray-900">{{loop.index}}</td>
+              <td class="border px-6 py-4 border-gray-900">{{product.product_name}}</td>
+              <td class="border px-6 py-4 border-gray-900">{{product.product_id}}</td>
+              <td class="border px-6 py-4 border-gray-900">{{product.company}}</td>
+              <td class="border px-6 py-4 border-gray-900">{{product.stock}}</td>
+              <td class="border px-6 py-4 border-gray-900">{{product.location}}</td>
+              <td class="border px-6 py-4 border-gray-900">
+                <a href="{{url_for('update',product_id=product.product_id)}}"
+                    button class="inline-flex text-white bg-yellow-500 border-0 py-1 px-2 focus:outline-none hover:bg-gray-500 rounded text-lg ml-5">Update </button>
+                    </a>
+                    <a href="{{url_for('delete',product_id=product.product_id)}}"
+                    button class="inline-flex text-white bg-black border-0 py-1 px-2 focus:outline-none hover:bg-gray-500 rounded text-lg ml-5">Delete </button>
+                    </a>
+              </td>
+                
+            </tr>
+
+            {% endfor %}
+            
+          </tbody>
+        </table>
+      
+    </div>
+  </section>
+  

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Home</title>
+</head>
+<body>
+    <header class="text-gray-600 body-font font-large">
+        <div class="container mx-auto flex flex-wrap p-4 flex-col md:flex-row items-center shadow-2xl bg-white">
+          <a href="{{ url_for('home') }}"class="flex title-font font-large items-center text-purple-900 mb-4 md:mb-0">
+            <span  >
+              <img alt="error" class="md:ml-10 flex flex-wrap h-12" src="{{ url_for('static', filename='finallogo.jpeg') }}">
+            </span>
+    
+              <span class="text-3xl text-gray-500 font-medium ml-5">Store</span>
+              <span class="text-3xl text-yellow-500 font-medium ml-2">Shed</span>
+            
+            
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center shadow-2xl">
+            <a href="{{ url_for('home') }}"class="mr-10 hover:text-yellow-800">Home</a>
+            <a href="{{ url_for('aboutus') }}"class="mr-10 hover:text-yellow-800">About Us</a>
+            <a href="{{ url_for('contactus') }}"class="mr-10 hover:text-yellow-800">Contact Us</a>
+          </nav>
+         
+        </div>
+    </header>
+        
+
+          <section class="text-gray-600 body-font-large">
+            <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center bg-gradient-to-t from-yellow-50 to-white">
+              <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-center mb-16 md:mb-0 items-center text-center">
+                <h1 class="title-font sm:text-4xl text-2xl mb-4 font-large text-purple-900 font-extrabold">WareHouse Management System
+                </h1>
+                <p class="mb-8 leading-relaxed font-bold ">Easily track your products,manage your customers and supplier,with Store Shed  . 
+                </p>
+                <div class="mx-auto">
+                  <a href="{{url_for('signup')}}"
+                  button class="inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-500 rounded text-lg">Sign Up</button></a>
+                  <a href="{{ url_for('signin') }}"
+                  button class="ml-4 inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-500 rounded text-lg">Sign In</button>
+                  </a>
+
+                 
+                </div>
+              </div>
+              <div class="mx-auto">
+                <img class="object-cover object-center rounded" alt="hero" src="{{ url_for('static', filename='image1.png') }}">
+              </div>
+            </div>
+          </section>
+        
+          <footer class="text-yellow-600 body-font bg-yellow-300 shadow-2xl">
+            <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+              <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+                <a href="{{ url_for('home') }}"class="flex title-font font-large items-center text-purple-900 mb-4 md:mb-0">
+                    <span class="text-3xl text-gray-500 font-medium ml-15">Store</span>
+                    <span class="text-3xl text-yellow-500 font-medium ml-2">Shed</span>
+                  
+                  
+                </a>
+                <p class="mt-3 ml-10 text-sm text-gray-500"><i>-The best logistic partner for you</i></p>
+              </div>
+              <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                  <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Explore</h2>
+                  <nav class="list-none mb-10">
+                    <li>
+                      <a href="{{ url_for('home') }}" class="text-gray-600 hover:text-gray-800">Home</a>
+                    </li>
+                    <li>
+                      <a href="{{ url_for('aboutus') }}"class="text-gray-600 hover:text-gray-800">About Us</a>
+                    </li>
+                    <li>
+                      <a href="{{ url_for('contactus') }}"class="text-gray-600 hover:text-gray-800">Contact US</a>
+                    </li>
+                    
+                  </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                  <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Follow</h2>
+                  <nav class="list-none mb-10">
+                    <li>
+                      <a class="text-gray-600 hover:text-gray-800">Twitter</a>
+                    </li>
+                    <li>
+                      <a class="text-gray-600 hover:text-gray-800">Instagram</a>
+                    </li>
+                    <li>
+                      <a class="text-gray-600 hover:text-gray-800" >Facebook</a>
+                    </li>
+                    <li>
+                      <a class="text-gray-600 hover:text-gray-800">LinkedIn</a>
+                    </li>
+                  </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                  <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Legal</h2>
+                  <nav class="list-none mb-10">
+                    <li>
+                      <a class="text-gray-600 hover:text-gray-800">Terms</a>
+                    </li>
+                    <li>
+                      <a class="text-gray-600 hover:text-gray-800">Privacy</a>
+                    </li>
+                    
+                  </nav>
+                </div>
+                
+              </div>
+            </div>
+            
+            </div>
+          </footer>
+          
+        

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Dashboard</title>
+</head>
+<body>
+  <header class="text-gray-600 body-font font-large">
+    <div class="container mx-auto flex flex-wrap p-4 flex-col md:flex-row items-center shadow-2xl bg-white">
+      <a href="{{ url_for('home') }}"class="flex title-font font-large items-center text-purple-900 mb-4 md:mb-0">
+        <span  >
+          <img alt="error" class="md:ml-10 flex flex-wrap h-12" src="{{ url_for('static', filename='finallogo.jpeg') }}">
+        </span>
+
+          <span class="text-3xl text-gray-500 font-medium ml-5">Store</span>
+          <span class="text-3xl text-yellow-500 font-medium ml-2">Shed</span>
+        
+        
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center sm\:hover\:shadow-2xl">
+    
+        <a href="{{ url_for('home') }}"
+                  button class="ml-4 inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-gray-500 rounded text-lg">Logout</button>
+                  </a>
+
+      </nav>
+     
+    </div>
+</header>
+<section class="text-gray-600 body-font ">
+    <div class="container px-24 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-20">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">DASHBOARD</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Store the data of Warehouse according to different modules. Click on each module to add basic details. </p>
+          </div>
+      <div class="flex flex-wrap -m-10 ">
+        <div class="lg:w-1/4 md:w-1/2 p-10 w-full shadow-lg bg-yellow-500">
+          <a href="{{ url_for('addproduct') }}">
+            <img alt="Addproduct" class="rounded mx-auto d-block" src="{{ url_for('static', filename='addpro.jpg') }}">
+          </a>
+          <div class="mt-4">
+            <a href="{{ url_for('addproduct') }}">
+            <div class="text-gray-900 title-font text-lg font-bold">Add Product</div></a>
+            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Add basic details related to products you want to store like Product ID, units etc.</h3>
+            
+          </div>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-10 w-full shadow-lg bg-gray-100">
+          <a href="{{ url_for('addcustomer') }}">
+            <img alt="addcustomer" class="rounded mx-auto d-block" src="{{ url_for('static', filename='add_customer1.jpg') }}">
+          </a>
+          <div class="mt-4">
+            <a href="{{ url_for('addcustomer') }}">
+            
+            <div class="text-gray-900 title-font text-lg font-bold">Add Customer</div></a>
+            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Add basic details related to your customers like Name, mail etc.</h3>
+           
+          </div>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-10 w-full shadow-lg bg-yellow-500">
+          <a href="{{ url_for('addsupplier') }}">
+            <img alt="addcustomer" class="rounded mx-auto d-block" src="{{ url_for('static', filename='addsupply.jpg') }}">
+          </a>
+          <div class="mt-4">
+            <a href="{{ url_for('addsupplier') }}">
+            
+            <div class="text-gray-900 title-font text-lg font-bold">Add Supplier</div></a>
+            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Add basic details related to supplier like Name, Supplier ID etc.</h3>
+           
+          </div>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 p-10 w-full shadow-lg bg-gray-100">
+          <a href="{{ url_for('productreport') }}">
+            <img alt="addcustomer" class="rounded mx-auto d-block" src="{{ url_for('static', filename='product_report(1).jpg') }}">
+          </a>
+          <div class="mt-4 ">
+            <a href="{{ url_for('productreport') }}">
+            
+            <div class="text-gray-900 title-font text-lg font-bold">Product Report</div></a>
+            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">View the report of all Products stored in Warehouse.</h3>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
